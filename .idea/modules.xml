@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/mynote.iml" filepath="$PROJECT_DIR$/mynote.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mynote_facade/mynote_facade.iml" filepath="$PROJECT_DIR$/mynote_facade/mynote_facade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mynote_service/mynote_service.iml" filepath="$PROJECT_DIR$/mynote_service/mynote_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mynote_web/mynote_web.iml" filepath="$PROJECT_DIR$/mynote_web/mynote_web.iml" />
     </modules>
   </component>
 </project>

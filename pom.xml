@@ -3,8 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mybatis</groupId>
   <artifactId>mybatis</artifactId>
-  <packaging>war</packaging>
+  <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>mynote_facade</module>
+    <module>mynote_service</module>
+    <module>mynote_web</module>
+  </modules>
   <name>mybatis Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
@@ -17,6 +22,34 @@
     <slf4j.version>1.6.6</slf4j.version>
     <log4j.version>1.2.9</log4j.version>
   </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- Zookeeper 用于分布式服务管理 -->
+      <dependency>
+        <groupId>org.apache.zookeeper</groupId>
+        <artifactId>zookeeper</artifactId>
+        <version>3.4.5</version>
+      </dependency>
+      <dependency>
+        <groupId>com.101tec</groupId>
+        <artifactId>zkclient</artifactId>
+        <version>0.3</version>
+      </dependency>
+      <!--dubbo-->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>dubbo</artifactId>
+        <version>2.5.3</version>
+      </dependency>
+      <!--netty-->
+      <dependency>
+        <groupId>org.jboss.netty</groupId>
+        <artifactId>netty</artifactId>
+        <version>3.2.5.Final</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <dependencies>
     <!-- spring核心包 -->
@@ -160,6 +193,8 @@
       <artifactId>standard</artifactId>
       <version>1.1.2</version>
     </dependency>
+
+
   </dependencies>
 
 

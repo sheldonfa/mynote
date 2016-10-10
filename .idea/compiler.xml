@@ -24,9 +24,34 @@
         <processorPath useClasspath="true" />
         <module name="mybatisMave" />
       </profile>
+      <profile default="false" name="Annotation profile for mynote_service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="mynote_service" />
+      </profile>
+      <profile default="false" name="Annotation profile for mynote_web" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="mynote_web" />
+      </profile>
+      <profile default="false" name="Annotation profile for mynote_facade" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="mynote_facade" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mybatisMave" target="1.6" />
+      <module name="mynote" target="1.6" />
+      <module name="mynote_facade" target="1.6" />
+      <module name="mynote_service" target="1.6" />
+      <module name="mynote_web" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>
