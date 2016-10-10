@@ -1,10 +1,10 @@
-package com; /**
+package com.provider; /**
  * Created by Administrator on 2016/10/10.
  */
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class DubboProvider {
+public class HelloProvider {
     public static void main(String[] args) throws Exception {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring/applicationContext.xml");
         context.start();

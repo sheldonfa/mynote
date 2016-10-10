@@ -1,4 +1,4 @@
-import com.service.UserService;
+import com.facade.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ public class dubboTest {
     private UserService userService;
 
     @Test
-    public void testFindUserByUserVo() throws Exception {
+    public void testFindUserByUserVo(){
         String user = userService.findUserById(1);
         System.out.println(user);
     }

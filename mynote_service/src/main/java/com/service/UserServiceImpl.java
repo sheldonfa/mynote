@@ -1,15 +1,15 @@
-package com.service.impl;
+package com.service;
 
 
+import com.facade.UserService;
 import com.mapper.UserMapper;
-import com.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
  * Created by Administrator on 2016/7/31.
  */
-@Service
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -17,8 +17,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String findUserById(Integer id) {
-
-        String user = "aaa";
-        return user;
+        return "hello world";
     }
 }

@@ -46,7 +46,7 @@
         如果要扫描多个包，中间使用半角逗号分隔
         要求mapper.xml和mapper.java同名且同一个目录下
          -->
-        <property name="basePackage" value="com.demo.mapper"/>
+        <property name="basePackage" value="com.mapper"/>
         <!-- 使用sqlSessionFactoryBeanName -->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>

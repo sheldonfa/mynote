@@ -199,7 +199,7 @@
 
 
   <build>
-    <finalName>mybatis</finalName>
+    <finalName>mynote_parent</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

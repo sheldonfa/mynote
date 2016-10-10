@@ -4,17 +4,6 @@
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd        http://code.alibabatech.com/schema/dubbo        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-        <!--<dubbo:annotation package="com.controller"/>-->
-
-        <!--消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样-->
-        <dubbo:application name="mynote_web"/>
-
-        <!--使用zookeeper注册中心暴露服务地址-->
-        <!--多注册中心配置，|分割表示同事连接多个不通注册中心，同一注册中心的多个集群地址用逗号分割-->
-        <!--注册中心-->
-        <dubbo:registry protocol="zookeeper" address="192.168.0.2:2181"/>
-
-        <!--用户服务接口-->
-        <dubbo:reference id="userService" interface = "com.service.UserService" check="false"/>
+        <import resource="dubbo-provider.xml"/>
 
 </beans>
