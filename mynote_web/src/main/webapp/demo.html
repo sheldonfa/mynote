@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function(){
+            function List(id){
+                this.id = document.getElementById(id);
+                this.lis = this.id.children[0].children; // 获取一级菜单所有li
+            }
+
+            // init 初始化
+            List.prototype.init = function(){ // 遍历所有的li 显示和隐藏
+                var that = this;
+                for(var i=0;i<this.lis.length;i++){
+//                    this.lis[i].index = i;
+                    this.lis[i].onmouseover = function(){
+                        that.show(this.children[0]);
+                    }
+                    this.lis[i].onmouseout = function(){
+                        that.hide(this.children[0]);
+                    }
+                }
+            };
+
+            // 显示和隐藏
+            List.prototype.show = function(obj){
+                obj.style.display = "block";
+            };
+            List.prototype.hide = function(obj){
+                obj.style.display = "none";
+            };
+
+            var list = new List("list");
+            list.init();
+        }
+    </script>
+</head>
+<body>
+<div id="list">
+    <ul>
+        <li>一级菜单
+            <ul>
+                <li>aaa</li>
+                <li>aaa</li>
+                <li>aaa</li>
+            </ul>
+        </li>
+        <li>一级菜单
+            <ul>
+                <li>aaa</li>
+                <li>aaa</li>
+                <li>aaa</li>
+            </ul>
+        </li>
+        <li>一级菜单
+            <ul>
+                <li>aaa</li>
+                <li>aaa</li>
+                <li>aaa</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
