@@ -45,6 +45,14 @@
             <artifactId>zkclient</artifactId>
         </dependency>
         <!-- dubbo 需要的jar end -->
+
+        <!--sitemesh3-->
+        <dependency>
+            <groupId>org.sitemesh</groupId>
+            <artifactId>sitemesh</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <!--end-->
     </dependencies>
 
     <build>

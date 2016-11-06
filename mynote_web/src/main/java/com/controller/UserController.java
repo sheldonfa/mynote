@@ -24,7 +24,7 @@ public class UserController{
         String hello = userService.findUserById(id);
         System.out.println(hello);
         model.addAttribute("hello",hello);
-        return "hello_world";
+        return "index";
 
     }
 }
