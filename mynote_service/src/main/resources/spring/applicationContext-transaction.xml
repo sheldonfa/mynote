@@ -13,8 +13,7 @@
 		                    http://www.springframework.org/schema/aop
 		                    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
-    <!--组件扫描service -->
-    <context:component-scan base-package="mapper,provider,service"/>
+
 
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
