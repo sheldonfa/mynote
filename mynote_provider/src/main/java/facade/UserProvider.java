@@ -1,10 +1,10 @@
-package com.facade;
+package facade;
 
 
 /**
  * Created by Administrator on 2016/7/31.
  */
-public interface UserService {
+public interface UserProvider {
 
     String findUserById(Integer id);
 }

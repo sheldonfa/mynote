@@ -1,8 +1,9 @@
-package com.service;
+package com.test.service.impl;
 
 
 import com.facade.UserService;
-import com.mapper.UserMapper;
+import com.test.mapper.UserMapper;
+import com.test.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +16,4 @@ public class UserServiceImpl implements UserService {
     @Autowired
     public UserMapper userMapper;
 
-    @Override
-    public String findUserById(Integer id) {
-        return "aaaaaa";
-    }
 }

@@ -7,9 +7,10 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>mynote_common</module>
-    <module>mynote_facade</module>
+    <module>mynote_model</module>
     <module>mynote_service</module>
     <module>mynote_web</module>
+    <module>mynote_provider</module>
   </modules>
   <name>mynote</name>
   <url>http://maven.apache.org</url>
