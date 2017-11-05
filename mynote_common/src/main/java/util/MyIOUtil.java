@@ -1,3 +1,5 @@
+package util;
+
 import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.util.PDFTextStripper;
@@ -10,7 +12,7 @@ import java.io.IOException;
  * @author fangxin
  * @date 2017/11/5.
  */
-public class IOUtil {
+public class MyIOUtil {
 
     public static String getTextFromPDF(String filePath) {
         String result = null;
