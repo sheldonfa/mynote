@@ -28,8 +28,6 @@
         }
     };
 
-    var aa = new ff();
-
     var $$ = function(id){
         return new ff(id);
     };
@@ -44,15 +42,10 @@
     /*判断数据类型*/
 
 
-    window.$$ = $$;
-    window.aa= aa;
+    window.ff=window.$$ = $$;
 })(window);
 
 /*公共*/
 (function(){
-    aa.extend(aa,{
-        alert:function(){
-            alert("aaaa");
-        }
-    })
-})(aa);
+
+})($$);

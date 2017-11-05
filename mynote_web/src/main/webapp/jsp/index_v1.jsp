@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <!DOCTYPE html>
 <html>
 
@@ -588,10 +588,10 @@
 </div>
 
 <!-- Flot -->
-<script src="js/plugins/flot/jquery.flot.js"></script>
-<script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-<script src="js/plugins/flot/jquery.flot.resize.js"></script>
-<script src="js/plugins/flot/jquery.flot.pie.js"></script>
+<script src="/js/plugins/flot/jquery.flot.js"></script>
+<script src="/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+<script src="/js/plugins/flot/jquery.flot.resize.js"></script>
+<script src="/js/plugins/flot/jquery.flot.pie.js"></script>
 
 <!--flotdemo-->
 <script type="text/javascript">
