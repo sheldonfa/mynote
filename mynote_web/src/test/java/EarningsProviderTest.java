@@ -17,9 +17,4 @@ public class EarningsProviderTest {
     @Autowired
     private EarningsProvider earningsProvider;
 
-    @Test
-    public void test1(){
-        earningsProvider.savePDF("C:\\Users\\Administrator\\Desktop\\科大国创：2016年年度报告.PDF");
-    }
-
 }

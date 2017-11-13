@@ -6,5 +6,4 @@ package earnings;
  */
 public interface EarningsProvider {
 
-    boolean savePDF(String filePath);
 }

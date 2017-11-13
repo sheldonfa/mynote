@@ -9,5 +9,4 @@ import service.common.BasicService;
  */
 public interface EarningService {
 
-    void insert(Earning earning);
 }

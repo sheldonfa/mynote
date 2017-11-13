@@ -14,19 +14,6 @@ import util.MyIOUtil;
 @Service
 public class EarningsProviderImpl implements EarningsProvider {
 
-    @Autowired
-    private EarningService earningService;
 
-    @Override
-    public boolean savePDF(String filePath) {
-        String text = MyIOUtil.getTextFromPDF(filePath);
-
-        Earning earning = new Earning();
-        earning.setCompany("asdf")
-                .setText(text);
-
-        earningService.insert(earning);
-        return true;
-    }
 
 }

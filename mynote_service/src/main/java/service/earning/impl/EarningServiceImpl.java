@@ -13,10 +13,4 @@ import service.earning.EarningService;
 @Service
 public class EarningServiceImpl implements EarningService {
 
-    @Autowired
-    private EarningMapper earningMapper;
-
-    public void insert(Earning earning) {
-        earningMapper.insert(earning);
-    }
 }
