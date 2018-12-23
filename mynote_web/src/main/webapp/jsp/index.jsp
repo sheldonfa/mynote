@@ -2,9 +2,10 @@
 <html>
 <head>
     <title>欢迎来到管理后台</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-<form action="/camera/upload" method="post" enctype="multipart/form-data">
+<form action="upload/" enctype="multipart/form-data" method="post">
     <h1>导入数据</h1>
     <table>
         <tr>

@@ -66,6 +66,14 @@ public class CameraServiceImpl implements CameraService {
             camera.setCameraName(values[6]);
             camera.setCatchArea(values[7]);
             cameras.add(camera);
+            if(cameras.size()>10){
+                try{
+                    cameraMapper.insertAll(cameras);
+                }catch(Exception e){
+                    br.close();
+                }
+                cameras.clear();
+            }
         }
         cameraMapper.insertAll(cameras);
     }

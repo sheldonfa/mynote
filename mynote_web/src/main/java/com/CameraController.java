@@ -1,62 +1,62 @@
 package com;
 
 
+import com.service.CameraService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import com.service.CameraService;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.*;
-import java.net.URLEncoder;
+import java.io.File;
+import java.io.IOException;
 
-@Controller("/camera")
+@Controller
 public class CameraController {
 
-//    @Autowired
-//    private CameraService cameraService;
+    @Autowired
+    private CameraService cameraService;
 
-    @RequestMapping(value = "/test_jsp", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public String test() {
-        return "test";
+        return "index";
     }
 
-//    @RequestMapping(value = "/upload", method = RequestMethod.POST)
-//    public String upload(@RequestParam("file") MultipartFile file, Model model, HttpServletRequest request) {
-//        if (!file.getOriginalFilename().endsWith(".csv")) {
-//            model.addAttribute("reason", "不是csv文件");
-//            return "upload_fail";
-//        }
-//        try {
-//            // 保存文件
-//            String sourceName = file.getOriginalFilename(); // 原始文件名
-//            String fileType = sourceName.substring(sourceName.lastIndexOf("."));
-//            String baseDir = getBaseDir(request);
-//            String path = baseDir + File.separator + sourceName;
-//            file.transferTo(new File(path));
-//            // 解析
-////            cameraService.parseCsv(path);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        return "upload_success";
-//
-//    }
-//
-//    private String getBaseDir(HttpServletRequest request) {
-//        String base = request.getSession().getServletContext().getRealPath("/upload");  //获取文件上传的路径，在webapp下的upload中
-//        File file = new File(base);
-//        if (!file.exists()) {
-//            file.mkdirs();
-//        }
-//        return base;
-//    }
-//
+    @RequestMapping(value = "upload", method = RequestMethod.POST)
+    public String upload(MultipartFile file, Model model, HttpServletRequest request) {
+        if (!file.getOriginalFilename().endsWith(".csv")) {
+            model.addAttribute("reason", "不是csv文件");
+            return "upload_fail";
+        }
+        try {
+            // 保存文件
+            String sourceName = file.getOriginalFilename(); // 原始文件名
+            String fileType = sourceName.substring(sourceName.lastIndexOf("."));
+            String baseDir = getBaseDir(request);
+            String path = baseDir + File.separator + sourceName;
+            file.transferTo(new File(path));
+            // 解析
+            cameraService.parseCsv(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "upload_success";
+
+    }
+
+    private String getBaseDir(HttpServletRequest request) {
+        String base = request.getSession().getServletContext().getRealPath("/upload");  //获取文件上传的路径，在webapp下的upload中
+        File file = new File(base);
+        if (!file.exists()) {
+            file.mkdirs();
+        }
+        return base;
+    }
+
 //    @RequestMapping("/download_jsp")
 //    public void download(HttpServletResponse response) throws IOException {
 //        String fileName = "asd.csv";
