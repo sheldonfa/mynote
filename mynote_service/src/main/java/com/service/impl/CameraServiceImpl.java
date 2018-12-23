@@ -10,6 +10,7 @@ import util.StringUtils;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -33,7 +34,7 @@ public class CameraServiceImpl implements CameraService {
     }
 
     @Override
-    public void parseCsv(String path) throws IOException {
+    public void parseCsv(String path) throws IOException, SQLException {
         BufferedReader br = new BufferedReader(new FileReader(path));
         String line;
         List<Camera> cameras = new ArrayList<Camera>();
@@ -71,6 +72,7 @@ public class CameraServiceImpl implements CameraService {
                     cameraMapper.insertAll(cameras);
                 }catch(Exception e){
                     br.close();
+                    throw new SQLException();
                 }
                 cameras.clear();
             }

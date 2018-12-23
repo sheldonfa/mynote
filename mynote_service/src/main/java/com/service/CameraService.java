@@ -3,6 +3,7 @@ package com.service;
 import model.Camera;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -13,5 +14,5 @@ public interface CameraService {
 
     List<Camera> selectAll();
 
-    void parseCsv(String path) throws IOException;
+    void parseCsv(String path) throws IOException, SQLException;
 }

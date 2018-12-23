@@ -35,14 +35,15 @@ public class CameraController {
         try {
             // 保存文件
             String sourceName = file.getOriginalFilename(); // 原始文件名
-            String fileType = sourceName.substring(sourceName.lastIndexOf("."));
             String baseDir = getBaseDir(request);
             String path = baseDir + File.separator + sourceName;
             file.transferTo(new File(path));
             // 解析
             cameraService.parseCsv(path);
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
+            model.addAttribute(e.getMessage());
+            return "upload_fail";
         }
         return "upload_success";
 

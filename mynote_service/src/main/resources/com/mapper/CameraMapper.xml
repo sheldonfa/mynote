@@ -10,6 +10,10 @@
     </resultMap>
 
     <!--auto generated Code-->
+    <select id="selectDatabase" resultType="string">
+        select database()
+    </select>
+
     <select id="selectAll" resultMap="ModelResultMap">
         select * from camera
     </select>

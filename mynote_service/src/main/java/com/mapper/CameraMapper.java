@@ -10,4 +10,6 @@ public interface CameraMapper {
     List<Camera> selectAll();
 
     void insertAll(@Param("cameras") List<Camera> cameras);
+
+    String selectDatabase();
 }

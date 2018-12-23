@@ -1,11 +1,13 @@
 package com.mapper;
 
 import model.Camera;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +18,12 @@ public class CameraMapperTest {
 
     @Autowired
     private CameraMapper mapper;
+
+    @Before
+    public void init() {
+        String dataBase = mapper.selectDatabase();
+        assert StringUtils.equals(dataBase, "vipmanage_test");
+    }
 
     @Test
     public void testSelectAll() throws Exception {
