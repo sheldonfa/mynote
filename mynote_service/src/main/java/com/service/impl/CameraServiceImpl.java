@@ -1,0 +1,72 @@
+package com.service.impl;
+
+import com.mapper.CameraMapper;
+import model.Camera;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.service.CameraService;
+import util.StringUtils;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+/**
+ * @author fangxin
+ * @date 2017/11/5.
+ */
+@Service
+public class CameraServiceImpl implements CameraService {
+
+    @Autowired
+    private CameraMapper cameraMapper;
+
+    @Override
+    public List<Camera> selectAll() {
+        return cameraMapper.selectAll();
+    }
+
+    @Override
+    public void parseCsv(String path) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(path));
+        String line;
+        List<Camera> cameras = new ArrayList<Camera>();
+        while ((line = br.readLine()) != null) {
+            String[] values = line.split(",");
+            assert values.length == 8;
+            Camera camera = new Camera();
+            camera.setStoreName(values[0]);
+            camera.setCustomerId(values[1]);
+            try {
+                camera.setCustomerAge(Integer.parseInt(values[2]));
+            } catch (Exception e) {
+                camera.setCustomerAge(null);
+            }
+            if (StringUtils.equals(values[3], "男")) {
+                camera.setCustomerSex(1);
+            } else if (StringUtils.equals(values[3], "女")) {
+                camera.setCustomerSex(2);
+            } else {
+                camera.setCustomerSex(null);
+            }
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            try {
+                Date date = df.parse(values[4]);
+                camera.setDataGenerateTime(new Timestamp(date.getTime()));
+            } catch (ParseException e) {
+                camera.setDataGenerateTime(null);
+            }
+            camera.setCameraId(values[5]);
+            camera.setCameraName(values[6]);
+            camera.setCatchArea(values[7]);
+            cameras.add(camera);
+        }
+        cameraMapper.insertAll(cameras);
+    }
+}
