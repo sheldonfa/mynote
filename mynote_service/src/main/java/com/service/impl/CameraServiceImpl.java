@@ -1,5 +1,6 @@
 package com.service.impl;
 
+import com.exception.DataFormatException;
 import com.mapper.CameraMapper;
 import model.Camera;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,22 +62,25 @@ public class CameraServiceImpl implements CameraService {
                 Date date = df.parse(values[4]);
                 camera.setDataGenerateTime(new Timestamp(date.getTime()));
             } catch (ParseException e) {
-                camera.setDataGenerateTime(null);
+                throw new DataFormatException("日期格式：" + values[4] + "解析失败，要求yyyy-MM-dd HH:mm:ss");
             }
             camera.setCameraId(values[5]);
             camera.setCameraName(values[6]);
             camera.setCatchArea(values[7]);
             cameras.add(camera);
-            if(cameras.size()>10){
-                try{
+            if (cameras.size() > 10) {
+                try {
                     cameraMapper.insertAll(cameras);
-                }catch(Exception e){
+                } catch (Exception e) {
                     br.close();
+                    e.printStackTrace();
                     throw new SQLException();
                 }
                 cameras.clear();
             }
         }
-        cameraMapper.insertAll(cameras);
+        if (cameras.size() > 0) {
+            cameraMapper.insertAll(cameras);
+        }
     }
 }

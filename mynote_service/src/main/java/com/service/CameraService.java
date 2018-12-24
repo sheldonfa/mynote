@@ -14,5 +14,13 @@ public interface CameraService {
 
     List<Camera> selectAll();
 
+    /**
+     * 解析csv文件
+     * @param path 获取文件
+     * @throws IOException
+     * @throws SQLException
+     */
     void parseCsv(String path) throws IOException, SQLException;
+
+
 }

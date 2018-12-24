@@ -32,6 +32,7 @@
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.2" level="project" />
     <orderEntry type="module" module-name="mynote_model" />
     <orderEntry type="module" module-name="mynote_provider" />
+    <orderEntry type="library" name="Maven: tk.mybatis:mapper:4.1.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:3.2.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-web:3.2.5.RELEASE" level="project" />

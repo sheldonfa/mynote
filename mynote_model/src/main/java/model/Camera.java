@@ -116,12 +116,22 @@ public class Camera {
     }
 
     @Override
-    public String toString() {
-        return super.toString();
+    protected void finalize() throws Throwable {
+        super.finalize();
     }
 
     @Override
-    protected void finalize() throws Throwable {
-        super.finalize();
+    public String toString() {
+        return "Camera{" +
+                "id=" + id +
+                ", storeName='" + storeName + '\'' +
+                ", customerId='" + customerId + '\'' +
+                ", customerAge=" + customerAge +
+                ", customerSex=" + customerSex +
+                ", dataGenerateTime=" + dataGenerateTime +
+                ", cameraId='" + cameraId + '\'' +
+                ", cameraName='" + cameraName + '\'' +
+                ", catchArea='" + catchArea + '\'' +
+                '}';
     }
 }

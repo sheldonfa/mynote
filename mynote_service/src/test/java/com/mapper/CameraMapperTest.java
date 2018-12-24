@@ -26,6 +26,14 @@ public class CameraMapperTest {
     }
 
     @Test
+    public void selectOne() {
+        Camera camera = new Camera();
+        camera.setId(421525  );
+        Camera res = mapper.selectOne(camera);
+        System.out.println(res);
+    }
+
+    @Test
     public void testSelectAll() throws Exception {
         List<Camera> cameras = mapper.selectAll();
         for (Camera c : cameras) {

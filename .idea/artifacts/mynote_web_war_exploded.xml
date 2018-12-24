@@ -26,6 +26,7 @@
           <element id="archive" name="mynote_provider-1.0-SNAPSHOT.jar">
             <element id="module-output" name="mynote_provider" />
           </element>
+          <element id="library" level="project" name="Maven: tk.mybatis:mapper:4.1.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:3.2.5.RELEASE" />
           <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.1.1" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:3.2.5.RELEASE" />
