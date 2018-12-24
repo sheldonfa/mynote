@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/vip_mapper/asdfadsf.iml" filepath="$PROJECT_DIR$/vip_mapper/asdfadsf.iml" />
       <module fileurl="file://$PROJECT_DIR$/mynote_common/mynote_common.iml" filepath="$PROJECT_DIR$/mynote_common/mynote_common.iml" />
       <module fileurl="file://$PROJECT_DIR$/mynote_model/mynote_model.iml" filepath="$PROJECT_DIR$/mynote_model/mynote_model.iml" />
       <module fileurl="file://$PROJECT_DIR$/mynote_provider/mynote_provider.iml" filepath="$PROJECT_DIR$/mynote_provider/mynote_provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/mynote_service/mynote_service.iml" filepath="$PROJECT_DIR$/mynote_service/mynote_service.iml" />
       <module fileurl="file://$PROJECT_DIR$/mynote_web/mynote_web.iml" filepath="$PROJECT_DIR$/mynote_web/mynote_web.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mynote_common/vip_mapper.iml" filepath="$PROJECT_DIR$/mynote_common/vip_mapper.iml" />
-      <module fileurl="file://$PROJECT_DIR$/vip_mapper.iml" filepath="$PROJECT_DIR$/vip_mapper.iml" />
-      <module fileurl="file://$PROJECT_DIR$/vip_mapper_2.iml" filepath="$PROJECT_DIR$/vip_mapper_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vip_mapper/vip_mapper.iml" filepath="$PROJECT_DIR$/vip_mapper/vip_mapper.iml" />
       <module fileurl="file://$PROJECT_DIR$/vipmanage.iml" filepath="$PROJECT_DIR$/vipmanage.iml" />
     </modules>
   </component>

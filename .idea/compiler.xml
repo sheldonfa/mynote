@@ -25,7 +25,6 @@
         <module name="mynote_service" />
         <module name="mynote_web" />
         <module name="sdfasd" />
-        <module name="vip_mapper" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
