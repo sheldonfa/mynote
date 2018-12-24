@@ -11,6 +11,7 @@
         <module>mynote_service</module>
         <module>mynote_web</module>
         <module>mynote_provider</module>
+        <module>vip_mapper</module>
     </modules>
 
     <properties>

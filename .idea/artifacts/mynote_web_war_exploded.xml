@@ -11,7 +11,7 @@
             <element id="module-output" name="mynote_service" />
           </element>
           <element id="archive" name="mynote_common-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="mynote_common" />
+            <element id="module-output" name="vip_mapper" />
           </element>
           <element id="library" level="project" name="Maven: org.apache.pdfbox:pdfbox:1.8.13" />
           <element id="library" level="project" name="Maven: org.apache.pdfbox:fontbox:1.8.13" />

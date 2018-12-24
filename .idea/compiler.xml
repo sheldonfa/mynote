@@ -18,14 +18,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="asdfadsf" />
         <module name="mynote_common" />
         <module name="mynote_model" />
         <module name="mynote_provider" />
         <module name="mynote_service" />
         <module name="mynote_web" />
+        <module name="sdfasd" />
+        <module name="vip_mapper" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="asdfadsf" target="1.6" />
       <module name="mybatisMave" target="1.6" />
       <module name="mynote" target="1.6" />
       <module name="mynote_common" target="1.8" />
@@ -34,6 +38,9 @@
       <module name="mynote_provider" target="1.6" />
       <module name="mynote_service" target="1.6" />
       <module name="mynote_web" target="1.6" />
+      <module name="sdfasd" target="1.6" />
+      <module name="vip_mapper" target="1.8" />
+      <module name="vip_mapper_2" target="1.6" />
       <module name="vipmanage" target="1.6" />
     </bytecodeTargetLevel>
   </component>
