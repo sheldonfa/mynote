@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>mynote_common</artifactId>
+    <artifactId>vip_common</artifactId>
 
     <dependencies>
         <!-- pdf解析 -->

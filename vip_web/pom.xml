@@ -9,13 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>mynote_web</artifactId>
+    <artifactId>vip_web</artifactId>
     <packaging>war</packaging>
 
     <dependencies>
         <dependency>
             <groupId>com.fangxin</groupId>
-            <artifactId>mynote_service</artifactId>
+            <artifactId>vip_service</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

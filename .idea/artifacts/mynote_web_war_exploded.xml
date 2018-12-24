@@ -7,7 +7,7 @@
           <element id="module-output" name="vip_web" />
         </element>
         <element id="directory" name="lib">
-          <element id="archive" name="mynote_service-1.0-SNAPSHOT.jar">
+          <element id="archive" name="vip_service-1.0-SNAPSHOT.jar">
             <element id="module-output" name="vip_service" />
           </element>
           <element id="archive" name="mynote_common-1.0-SNAPSHOT.jar">
@@ -23,9 +23,7 @@
           <element id="archive" name="mynote_model-1.0-SNAPSHOT.jar">
             <element id="module-output" name="vip_model" />
           </element>
-          <element id="archive" name="mynote_provider-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="vip_provider" />
-          </element>
+          <element id="library" level="project" name="Maven: com.fangxin:mynote_provider:1.0-SNAPSHOT" />
           <element id="library" level="project" name="Maven: tk.mybatis:mapper:4.1.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:3.2.5.RELEASE" />
           <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.1.1" />
