@@ -12,10 +12,15 @@ import java.util.List;
  */
 public interface CameraService {
 
+    /**
+     * 查询全部
+     * @return
+     */
     List<Camera> selectAll();
 
     /**
      * 解析csv文件
+     *
      * @param path 获取文件
      * @throws IOException
      * @throws SQLException
