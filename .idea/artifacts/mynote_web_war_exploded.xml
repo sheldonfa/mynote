@@ -4,11 +4,11 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="mynote_web" />
+          <element id="module-output" name="vip_web" />
         </element>
         <element id="directory" name="lib">
           <element id="archive" name="mynote_service-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="mynote_service" />
+            <element id="module-output" name="vip_service" />
           </element>
           <element id="archive" name="mynote_common-1.0-SNAPSHOT.jar">
             <element id="module-output" name="vip_mapper" />
@@ -21,10 +21,10 @@
           <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.3.1" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.2" />
           <element id="archive" name="mynote_model-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="mynote_model" />
+            <element id="module-output" name="vip_model" />
           </element>
           <element id="archive" name="mynote_provider-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="mynote_provider" />
+            <element id="module-output" name="vip_provider" />
           </element>
           <element id="library" level="project" name="Maven: tk.mybatis:mapper:4.1.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:3.2.5.RELEASE" />
@@ -59,9 +59,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/mynote_web/target/mynote_web/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/vip_web/target/mynote_web/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="mynote_web/web/Web" />
+      <element id="javaee-facet-resources" facet="vip_web/web/Web" />
     </root>
   </artifact>
 </component>
