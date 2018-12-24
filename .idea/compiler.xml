@@ -25,6 +25,12 @@
         <module name="mynote_service" />
         <module name="mynote_web" />
         <module name="sdfasd" />
+        <module name="vip_common" />
+        <module name="vip_mapper" />
+        <module name="vip_model" />
+        <module name="vip_provider" />
+        <module name="vip_service" />
+        <module name="vip_web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -38,8 +44,14 @@
       <module name="mynote_service" target="1.6" />
       <module name="mynote_web" target="1.6" />
       <module name="sdfasd" target="1.6" />
-      <module name="vip_mapper" target="1.8" />
+      <module name="vip_common" target="1.8" />
+      <module name="vip_manage" target="1.6" />
+      <module name="vip_mapper" target="1.6" />
       <module name="vip_mapper_2" target="1.6" />
+      <module name="vip_model" target="1.6" />
+      <module name="vip_provider" target="1.6" />
+      <module name="vip_service" target="1.6" />
+      <module name="vip_web" target="1.6" />
       <module name="vipmanage" target="1.6" />
     </bytecodeTargetLevel>
   </component>

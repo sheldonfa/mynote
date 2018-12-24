@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="war" name="mynote_web:war">
-    <output-path>$PROJECT_DIR$/mynote_web/target</output-path>
+    <output-path>$PROJECT_DIR$/vip_web/target</output-path>
     <root id="archive" name="mynote_web.war">
       <element id="artifact" artifact-name="mynote_web:war exploded" />
     </root>

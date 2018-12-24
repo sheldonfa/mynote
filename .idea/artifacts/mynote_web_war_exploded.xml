@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="mynote_web:war exploded">
-    <output-path>$PROJECT_DIR$/mynote_web/target/mynote_web</output-path>
+    <output-path>$PROJECT_DIR$/vip_web/target/mynote_web</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -11,7 +11,7 @@
             <element id="module-output" name="vip_service" />
           </element>
           <element id="archive" name="mynote_common-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="vip_mapper" />
+            <element id="module-output" name="vip_common" />
           </element>
           <element id="library" level="project" name="Maven: org.apache.pdfbox:pdfbox:1.8.13" />
           <element id="library" level="project" name="Maven: org.apache.pdfbox:fontbox:1.8.13" />

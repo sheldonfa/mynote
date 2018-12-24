@@ -2,15 +2,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.fangxin</groupId>
-    <artifactId>vipmanage</artifactId>
+    <artifactId>vip_manage</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>mynote_common</module>
-        <module>mynote_model</module>
-        <module>mynote_service</module>
-        <module>mynote_web</module>
-        <module>mynote_provider</module>
+        <module>vip_common</module>
+        <module>vip_model</module>
+        <module>vip_mapper</module>
+        <module>vip_service</module>
+        <module>vip_web</module>
         <module>vip_mapper</module>
     </modules>
 
