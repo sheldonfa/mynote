@@ -41,7 +41,12 @@ public class CameraServiceImpl implements CameraService {
         BufferedReader br = new BufferedReader(new FileReader(path));
         String line;
         List<Camera> cameras = new ArrayList<Camera>();
+        int num = 0;
         while ((line = br.readLine()) != null) {
+            num++;
+            if (num == 1) {
+                continue;
+            }
             String[] values = line.split(",");
             assert values.length == 8;
             Camera camera = new Camera();
@@ -64,6 +69,7 @@ public class CameraServiceImpl implements CameraService {
                 Date date = df.parse(values[4]);
                 camera.setDataGenerateTime(new Timestamp(date.getTime()));
             } catch (ParseException e) {
+                e.printStackTrace();
                 throw new DataFormatException("日期格式：" + values[4] + "解析失败，要求yyyy-MM-dd HH:mm:ss");
             }
             camera.setCameraId(values[5]);
