@@ -2,11 +2,12 @@ package com.service.impl;
 
 import com.exception.DataFormatException;
 import com.mapper.CameraMapper;
+import com.service.CameraService;
+import entity.StatsResultInfo;
 import model.Camera;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.service.CameraService;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -18,6 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author fangxin
@@ -82,5 +84,33 @@ public class CameraServiceImpl implements CameraService {
         if (cameras.size() > 0) {
             cameraMapper.insertAll(cameras);
         }
+    }
+
+    @Override
+    public Long statsRepeat(Long startTimeLong, Long endTimeLong) {
+        return cameraMapper.countRepeat(new Timestamp(startTimeLong), new Timestamp(endTimeLong));
+    }
+
+    public Long statsPeakHour(String storeName, Long startTimeLong, Long endTimeLong) {
+        List<Map<String, String>> maps = cameraMapper.statsHoursCount(storeName, startTimeLong, endTimeLong);
+        Integer max = 0;
+        maps.sort((o1, o2) -> {
+            Integer count1 = Integer.parseInt(o1.get("count"));
+            Integer count2 = Integer.parseInt(o2.get("count"));
+            return count1 > count2 ? 1 : 0;
+        });
+        Map<String, String> res = maps.get(0);
+        return Long.parseLong(res.get("period"));
+    }
+
+    @Override
+    public StatsResultInfo statsResult(String filePath, String storeName, Long startTime, Long endTime) {
+        // 计算重复到店
+        Long repeatCount = statsRepeat(startTime, endTime);
+        Long peakHour = statsPeakHour(storeName, startTime, endTime);
+        StatsResultInfo res = new StatsResultInfo();
+        res.setRepeatCount(repeatCount);
+        res.setPeakHour(peakHour);
+        return res;
     }
 }

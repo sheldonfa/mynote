@@ -1,5 +1,6 @@
 package com.service;
 
+import entity.StatsResultInfo;
 import model.Camera;
 
 import java.io.IOException;
@@ -14,6 +15,7 @@ public interface CameraService {
 
     /**
      * 查询全部
+     *
      * @return
      */
     List<Camera> selectAll();
@@ -27,5 +29,10 @@ public interface CameraService {
      */
     void parseCsv(String path) throws IOException, SQLException;
 
+    /**
+     * 重复到店
+     */
+    Long statsRepeat(Long startTime, Long endTime);
 
+    StatsResultInfo statsResult(String filePath, String storeName, Long startTime, Long endTime);
 }
