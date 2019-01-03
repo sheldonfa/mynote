@@ -1,9 +1,9 @@
-package entity;
+package entity.statsInfo;
 
 public class StatsResultInfo {
 
     private Long repeatCount;
-    private Long peakHour;
+    private Integer peakHour;
 
     public Long getRepeatCount() {
         return repeatCount;
@@ -13,11 +13,11 @@ public class StatsResultInfo {
         this.repeatCount = repeatCount;
     }
 
-    public Long getPeakHour() {
+    public Integer getPeakHour() {
         return peakHour;
     }
 
-    public void setPeakHour(Long peakHour) {
+    public void setPeakHour(Integer peakHour) {
         this.peakHour = peakHour;
     }
 

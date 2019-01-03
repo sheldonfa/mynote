@@ -19,6 +19,11 @@ public class Result<T> {
         this.message = cm.getMessage();
     }
 
+    private Result(int code, String message) {
+        this.code = code;
+        this.message = message;
+    }
+
     /**
      * 成功时候的调用
      *
@@ -55,8 +60,7 @@ public class Result<T> {
      * @return
      */
     public static <T> Result<T> error(CodeMsg cm, String msg) {
-        cm.setMessage(cm.getMessage() + "--" + msg);
-        return new Result<T>(cm);
+        return new Result<T>(cm.getCode(), cm.getMessage() + "--" + msg);
     }
 
     public T getData() {
@@ -71,5 +75,12 @@ public class Result<T> {
         return code;
     }
 
-
+    @Override
+    public String toString() {
+        return "Result{" +
+                "message='" + message + '\'' +
+                ", code=" + code +
+                ", data=" + data +
+                '}';
+    }
 }

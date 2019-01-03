@@ -52,12 +52,27 @@ public class CameraController {
             String path = baseDir + File.separator + sourceName;
             file.transferTo(new File(path));
             // 解析
-            cameraService.parseCsv(path);
+            cameraService.insertFromCsv(path);
         } catch (Exception e) {
-            return Result.error(CodeMsg.FILE_PARSE_EXCEPTION, e.getMessage());
+            Result<Object> obj = Result.error(CodeMsg.FILE_PARSE_EXCEPTION, e.getMessage());
+            System.out.println(obj);
+            return obj;
         }
         return Result.success();
 
+    }
+
+    @RequestMapping("/stats")
+    @ResponseBody
+    public Result stats(String storeName, Long startTimeLong, Long endTimeLong) {
+        return Result.success(cameraService.statsResult(storeName, startTimeLong, endTimeLong));
+    }
+
+    @RequestMapping("/deleteAll")
+    @ResponseBody
+    public Result delteAll() {
+        cameraService.deleteAll();
+        return Result.success();
     }
 
     private String getBaseDir(HttpServletRequest request) {
@@ -67,12 +82,6 @@ public class CameraController {
             file.mkdirs();
         }
         return base;
-    }
-
-    @RequestMapping("/stats")
-    @ResponseBody
-    public Result stats(String filePath, String storeName, Long startTimeLong, Long endTimeLong) {
-        return Result.success(cameraService.statsResult(filePath, storeName, startTimeLong, endTimeLong));
     }
 
 //    @RequestMapping("/download_jsp")

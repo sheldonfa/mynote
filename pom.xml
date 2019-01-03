@@ -25,6 +25,7 @@
         <tk.mybatis.version>4.1.2</tk.mybatis.version>
         <!--jackson-->
         <jackson.version>2.9.8</jackson.version>
+        <junit.version>4.12</junit.version>
     </properties>
 
     <dependencies>
@@ -137,9 +138,9 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>4.13-beta-1</version>
+            <scope>test</scope>
         </dependency>
-
         <!--springaop依赖的的包-->
         <dependency>
             <groupId>org.aspectj</groupId>

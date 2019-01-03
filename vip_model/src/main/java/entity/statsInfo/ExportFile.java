@@ -1,4 +1,4 @@
-package entity;
+package entity.statsInfo;
 
 import java.io.FileInputStream;
 
