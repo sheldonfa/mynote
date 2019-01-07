@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.mapper.CameraMapper">
+
+    <!--auto generated Code-->
+    <resultMap id="ModelResultMap" type="model.Camera">
+        <result column="id" property="id"/>
+        <result column="customer_id" property="customerId"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <select id="selectDatabase" resultType="string">
+        select database()
+    </select>
+
+    <select id="selectAll" resultMap="ModelResultMap">
+        select * from camera
+    </select>
+
+    <insert id="insertAll">
+        INSERT INTO camera
+        VALUES
+        <foreach collection="cameras" item="item" separator=",">
+            (null,
+            #{item.storeName},
+            #{item.customerId},
+            #{item.customerAge},
+            #{item.customerSex},
+            #{item.dataGenerateTime},
+            #{item.cameraId},
+            #{item.cameraName},
+            #{item.catchArea})
+        </foreach>
+    </insert>
+
+    <select id="countRepeat" resultType="long">
+    select count(*)
+    from (
+        select customer_id,count(*),UNIX_TIMESTAMP(MAX(data_generate_time)) as 'maxtimestamp' ,UNIX_TIMESTAMP(min(data_generate_time)) as 'mintimestamp'
+        from camera
+        where store_name = #{storeName}
+        and data_generate_time BETWEEN #{startTime} and #{endTime}
+        group by customer_id
+        HAVING count(customer_id)>1
+    ) as t1
+    where maxtimestamp > mintimestamp+7200
+    </select>
+
+    <select id="statsHoursCount" resultType="entity.statsInfo.HourStat">
+      select
+        DATE_FORMAT(data_generate_time,'%H') as 'hour',
+        count(1) as 'count'
+      from camera
+      where store_name = #{storeName}
+      and data_generate_time BETWEEN #{startTime} and #{endTime}
+    group by DATE_FORMAT(data_generate_time,'%H')
+    </select>
+
+    <delete id="deleteAll">
+        truncate camera
+    </delete>
+</mapper>
